@@ -11,12 +11,12 @@
  */
 
 import { RequestFile } from './models';
-import { ForbiddenError403ResponseError } from './forbiddenError403ResponseError';
+import { GeneralLedgerEntryResponse } from './generalLedgerEntryResponse';
 
-export class ForbiddenError403Response {
-    'data': Array<string>;
-    'success': boolean;
-    'error': ForbiddenError403ResponseError;
+export class CreateGeneralLedgerEntry200Response {
+    'data'?: Array<GeneralLedgerEntryResponse>;
+    'success'?: boolean;
+    'error'?: object;
 
     static discriminator: string | undefined = undefined;
 
@@ -24,7 +24,7 @@ export class ForbiddenError403Response {
         {
             "name": "data",
             "baseName": "data",
-            "type": "Array<string>"
+            "type": "Array<GeneralLedgerEntryResponse>"
         },
         {
             "name": "success",
@@ -34,11 +34,11 @@ export class ForbiddenError403Response {
         {
             "name": "error",
             "baseName": "error",
-            "type": "ForbiddenError403ResponseError"
+            "type": "object"
         }    ];
 
     static getAttributeTypeMap() {
-        return ForbiddenError403Response.attributeTypeMap;
+        return CreateGeneralLedgerEntry200Response.attributeTypeMap;
     }
 }
 

@@ -3,10 +3,15 @@ import localVarRequest from 'request';
 export * from './badRequestError400Response';
 export * from './badRequestError400ResponseError';
 export * from './baseError';
+export * from './createGeneralLedgerEntry200Response';
+export * from './createGeneralLedgerEntryRequest';
+export * from './createGeneralLedgerLineItemRequest';
 export * from './forbiddenError403Response';
 export * from './forbiddenError403ResponseError';
 export * from './generalLedgerAccountResponse';
 export * from './generalLedgerAccountType';
+export * from './generalLedgerEntryResponse';
+export * from './generalLedgerEntryType';
 export * from './getGeneralLedgerAccounts200Response';
 export * from './internalServerError500Response';
 export * from './internalServerError500ResponseError';
@@ -29,10 +34,15 @@ export type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
 import { BadRequestError400Response } from './badRequestError400Response';
 import { BadRequestError400ResponseError } from './badRequestError400ResponseError';
 import { BaseError } from './baseError';
+import { CreateGeneralLedgerEntry200Response } from './createGeneralLedgerEntry200Response';
+import { CreateGeneralLedgerEntryRequest } from './createGeneralLedgerEntryRequest';
+import { CreateGeneralLedgerLineItemRequest } from './createGeneralLedgerLineItemRequest';
 import { ForbiddenError403Response } from './forbiddenError403Response';
 import { ForbiddenError403ResponseError } from './forbiddenError403ResponseError';
 import { GeneralLedgerAccountResponse } from './generalLedgerAccountResponse';
 import { GeneralLedgerAccountType } from './generalLedgerAccountType';
+import { GeneralLedgerEntryResponse } from './generalLedgerEntryResponse';
+import { GeneralLedgerEntryType } from './generalLedgerEntryType';
 import { GetGeneralLedgerAccounts200Response } from './getGeneralLedgerAccounts200Response';
 import { InternalServerError500Response } from './internalServerError500Response';
 import { InternalServerError500ResponseError } from './internalServerError500ResponseError';
@@ -53,15 +63,20 @@ let primitives = [
 
 let enumsMap: {[index: string]: any} = {
         "GeneralLedgerAccountType": GeneralLedgerAccountType,
+        "GeneralLedgerEntryType": GeneralLedgerEntryType,
 }
 
 let typeMap: {[index: string]: any} = {
     "BadRequestError400Response": BadRequestError400Response,
     "BadRequestError400ResponseError": BadRequestError400ResponseError,
     "BaseError": BaseError,
+    "CreateGeneralLedgerEntry200Response": CreateGeneralLedgerEntry200Response,
+    "CreateGeneralLedgerEntryRequest": CreateGeneralLedgerEntryRequest,
+    "CreateGeneralLedgerLineItemRequest": CreateGeneralLedgerLineItemRequest,
     "ForbiddenError403Response": ForbiddenError403Response,
     "ForbiddenError403ResponseError": ForbiddenError403ResponseError,
     "GeneralLedgerAccountResponse": GeneralLedgerAccountResponse,
+    "GeneralLedgerEntryResponse": GeneralLedgerEntryResponse,
     "GetGeneralLedgerAccounts200Response": GetGeneralLedgerAccounts200Response,
     "InternalServerError500Response": InternalServerError500Response,
     "InternalServerError500ResponseError": InternalServerError500ResponseError,

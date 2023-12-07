@@ -12,10 +12,6 @@
 
 import { RequestFile } from './models';
 
-export enum GeneralLedgerAccountType {
-    Asset = <any> 'asset',
-    Liability = <any> 'liability',
-    Equity = <any> 'equity',
-    Revenue = <any> 'revenue',
-    Expense = <any> 'expense'
+export enum GeneralLedgerEntryType {
+    Invoice = <any> 'invoice'
 }
