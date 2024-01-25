@@ -1,5 +1,6 @@
 import localVarRequest from 'request';
 
+export * from './accountReceivableResponse';
 export * from './badRequestError400Response';
 export * from './badRequestError400ResponseError';
 export * from './baseError';
@@ -12,6 +13,7 @@ export * from './generalLedgerAccountResponse';
 export * from './generalLedgerAccountType';
 export * from './generalLedgerEntryResponse';
 export * from './generalLedgerEntryType';
+export * from './getAccountsReceivable200Response';
 export * from './getGeneralLedgerAccounts200Response';
 export * from './internalServerError500Response';
 export * from './internalServerError500ResponseError';
@@ -31,6 +33,7 @@ export interface RequestDetailedFile {
 export type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
 
 
+import { AccountReceivableResponse } from './accountReceivableResponse';
 import { BadRequestError400Response } from './badRequestError400Response';
 import { BadRequestError400ResponseError } from './badRequestError400ResponseError';
 import { BaseError } from './baseError';
@@ -43,6 +46,7 @@ import { GeneralLedgerAccountResponse } from './generalLedgerAccountResponse';
 import { GeneralLedgerAccountType } from './generalLedgerAccountType';
 import { GeneralLedgerEntryResponse } from './generalLedgerEntryResponse';
 import { GeneralLedgerEntryType } from './generalLedgerEntryType';
+import { GetAccountsReceivable200Response } from './getAccountsReceivable200Response';
 import { GetGeneralLedgerAccounts200Response } from './getGeneralLedgerAccounts200Response';
 import { InternalServerError500Response } from './internalServerError500Response';
 import { InternalServerError500ResponseError } from './internalServerError500ResponseError';
@@ -67,6 +71,7 @@ let enumsMap: {[index: string]: any} = {
 }
 
 let typeMap: {[index: string]: any} = {
+    "AccountReceivableResponse": AccountReceivableResponse,
     "BadRequestError400Response": BadRequestError400Response,
     "BadRequestError400ResponseError": BadRequestError400ResponseError,
     "BaseError": BaseError,
@@ -77,6 +82,7 @@ let typeMap: {[index: string]: any} = {
     "ForbiddenError403ResponseError": ForbiddenError403ResponseError,
     "GeneralLedgerAccountResponse": GeneralLedgerAccountResponse,
     "GeneralLedgerEntryResponse": GeneralLedgerEntryResponse,
+    "GetAccountsReceivable200Response": GetAccountsReceivable200Response,
     "GetGeneralLedgerAccounts200Response": GetGeneralLedgerAccounts200Response,
     "InternalServerError500Response": InternalServerError500Response,
     "InternalServerError500ResponseError": InternalServerError500ResponseError,
