@@ -3,6 +3,8 @@ api.ts
 api/apis.ts
 api/defaultApi.ts
 git_push.sh
+model/accountReceivableIncome.ts
+model/accountReceivableIncomeType.ts
 model/accountReceivableResponse.ts
 model/badRequestError400Response.ts
 model/badRequestError400ResponseError.ts

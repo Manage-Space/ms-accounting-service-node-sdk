@@ -11,6 +11,7 @@
  */
 
 import { RequestFile } from './models';
+import { AccountReceivableIncome } from './accountReceivableIncome';
 
 export class AccountReceivableResponse {
     /**
@@ -42,21 +43,9 @@ export class AccountReceivableResponse {
     */
     'payments': number;
     /**
-    * Fee income.
+    * Income details.
     */
-    'feeIncome': number;
-    /**
-    * Merchandise income.
-    */
-    'merchandiseIncome': number;
-    /**
-    * Rental income.
-    */
-    'rentalIncome': number;
-    /**
-    * Other income.
-    */
-    'otherIncome': number;
+    'income': Array<AccountReceivableIncome>;
 
     static discriminator: string | undefined = undefined;
 
@@ -97,24 +86,9 @@ export class AccountReceivableResponse {
             "type": "number"
         },
         {
-            "name": "feeIncome",
-            "baseName": "feeIncome",
-            "type": "number"
-        },
-        {
-            "name": "merchandiseIncome",
-            "baseName": "merchandiseIncome",
-            "type": "number"
-        },
-        {
-            "name": "rentalIncome",
-            "baseName": "rentalIncome",
-            "type": "number"
-        },
-        {
-            "name": "otherIncome",
-            "baseName": "otherIncome",
-            "type": "number"
+            "name": "income",
+            "baseName": "income",
+            "type": "Array<AccountReceivableIncome>"
         }    ];
 
     static getAttributeTypeMap() {

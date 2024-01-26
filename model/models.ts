@@ -1,5 +1,7 @@
 import localVarRequest from 'request';
 
+export * from './accountReceivableIncome';
+export * from './accountReceivableIncomeType';
 export * from './accountReceivableResponse';
 export * from './badRequestError400Response';
 export * from './badRequestError400ResponseError';
@@ -33,6 +35,8 @@ export interface RequestDetailedFile {
 export type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
 
 
+import { AccountReceivableIncome } from './accountReceivableIncome';
+import { AccountReceivableIncomeType } from './accountReceivableIncomeType';
 import { AccountReceivableResponse } from './accountReceivableResponse';
 import { BadRequestError400Response } from './badRequestError400Response';
 import { BadRequestError400ResponseError } from './badRequestError400ResponseError';
@@ -66,11 +70,13 @@ let primitives = [
                  ];
 
 let enumsMap: {[index: string]: any} = {
+        "AccountReceivableIncomeType": AccountReceivableIncomeType,
         "GeneralLedgerAccountType": GeneralLedgerAccountType,
         "GeneralLedgerEntryType": GeneralLedgerEntryType,
 }
 
 let typeMap: {[index: string]: any} = {
+    "AccountReceivableIncome": AccountReceivableIncome,
     "AccountReceivableResponse": AccountReceivableResponse,
     "BadRequestError400Response": BadRequestError400Response,
     "BadRequestError400ResponseError": BadRequestError400ResponseError,
