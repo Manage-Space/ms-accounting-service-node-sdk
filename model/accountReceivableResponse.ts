@@ -38,6 +38,10 @@ export class AccountReceivableResponse {
     */
     'closingBalance': number;
     /**
+    * Check asset amount.
+    */
+    'payments': number;
+    /**
     * Fee income.
     */
     'feeIncome': number;
@@ -85,6 +89,11 @@ export class AccountReceivableResponse {
         {
             "name": "closingBalance",
             "baseName": "closingBalance",
+            "type": "number"
+        },
+        {
+            "name": "payments",
+            "baseName": "payments",
             "type": "number"
         },
         {
