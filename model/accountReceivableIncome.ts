@@ -16,7 +16,7 @@ import { AccountReceivableIncomeType } from './accountReceivableIncomeType';
 export class AccountReceivableIncome {
     'incomeType': AccountReceivableIncomeType;
     /**
-    * Total.
+    * Income Total
     */
     'incomeTotal': number;
 
