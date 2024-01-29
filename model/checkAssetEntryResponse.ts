@@ -11,9 +11,13 @@
  */
 
 import { RequestFile } from './models';
-import { AccountReceivableIncome } from './accountReceivableIncome';
+import { CheckAssetType } from './checkAssetType';
 
-export class AccountReceivableResponse {
+export class CheckAssetEntryResponse {
+    /**
+    * Check Asset Entry ID.
+    */
+    'checkAssetEntryId': string;
     /**
     * Ledger ID.
     */
@@ -31,33 +35,27 @@ export class AccountReceivableResponse {
     */
     'locationId': string | null;
     /**
-    * Opening balance.
+    * Amount.
     */
-    'openingBalance': number;
+    'amount': number;
     /**
-    * Closing balance.
+    * Description.
     */
-    'closingBalance': number;
+    'description': string | null;
+    'checkAssetType': CheckAssetType;
     /**
-    * Check asset amount.
+    * The date the entry was made.
     */
-    'payments': number;
-    /**
-    * Income details.
-    */
-    'income': Array<AccountReceivableIncome>;
-    /**
-    * Additions.
-    */
-    'additions': number;
-    /**
-    * Subtractions.
-    */
-    'subtractions': number;
+    'entryDate': Date;
 
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            "name": "checkAssetEntryId",
+            "baseName": "checkAssetEntryId",
+            "type": "string"
+        },
         {
             "name": "ledgerId",
             "baseName": "ledgerId",
@@ -79,38 +77,30 @@ export class AccountReceivableResponse {
             "type": "string"
         },
         {
-            "name": "openingBalance",
-            "baseName": "openingBalance",
+            "name": "amount",
+            "baseName": "amount",
             "type": "number"
         },
         {
-            "name": "closingBalance",
-            "baseName": "closingBalance",
-            "type": "number"
+            "name": "description",
+            "baseName": "description",
+            "type": "string"
         },
         {
-            "name": "payments",
-            "baseName": "payments",
-            "type": "number"
+            "name": "checkAssetType",
+            "baseName": "checkAssetType",
+            "type": "CheckAssetType"
         },
         {
-            "name": "income",
-            "baseName": "income",
-            "type": "Array<AccountReceivableIncome>"
-        },
-        {
-            "name": "additions",
-            "baseName": "additions",
-            "type": "number"
-        },
-        {
-            "name": "subtractions",
-            "baseName": "subtractions",
-            "type": "number"
+            "name": "entryDate",
+            "baseName": "entryDate",
+            "type": "Date"
         }    ];
 
     static getAttributeTypeMap() {
-        return AccountReceivableResponse.attributeTypeMap;
+        return CheckAssetEntryResponse.attributeTypeMap;
     }
 }
 
+export namespace CheckAssetEntryResponse {
+}

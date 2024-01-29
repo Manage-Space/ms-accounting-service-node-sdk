@@ -20,6 +20,7 @@ import { CreateGeneralLedgerEntry200Response } from '../model/createGeneralLedge
 import { CreateGeneralLedgerEntryRequest } from '../model/createGeneralLedgerEntryRequest';
 import { ForbiddenError403Response } from '../model/forbiddenError403Response';
 import { GetAccountsReceivable200Response } from '../model/getAccountsReceivable200Response';
+import { GetCheckAssetEntries200Response } from '../model/getCheckAssetEntries200Response';
 import { GetGeneralLedgerAccounts200Response } from '../model/getGeneralLedgerAccounts200Response';
 import { InternalServerError500Response } from '../model/internalServerError500Response';
 import { UnauthorizedError401Response } from '../model/unauthorizedError401Response';
@@ -270,6 +271,100 @@ export class DefaultApi {
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                             body = ObjectSerializer.deserialize(body, "GetAccountsReceivable200Response");
+                            resolve({ response: response, body: body });
+                        } else {
+                            reject(new HttpError(response, body, response.statusCode));
+                        }
+                    }
+                });
+            });
+        });
+    }
+    /**
+     * Get list of check asset entries
+     * @summary Get list of check asset entries
+     * @param orgId The Organization ID
+     * @param siteId The Site ID
+     * @param dateTo 
+     * @param dateFrom 
+     */
+    public async getCheckAssetEntries (orgId: string, siteId: string, dateTo: Date, dateFrom?: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: GetCheckAssetEntries200Response;  }> {
+        const localVarPath = this.basePath + '/accounting/orgs/{orgId}/sites/{siteId}/check-asset-entries'
+            .replace('{' + 'orgId' + '}', encodeURIComponent(String(orgId)))
+            .replace('{' + 'siteId' + '}', encodeURIComponent(String(siteId)));
+        let localVarQueryParameters: any = {};
+        let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
+        const produces = ['application/json;v=1'];
+        // give precedence to 'application/json'
+        if (produces.indexOf('application/json') >= 0) {
+            localVarHeaderParams.Accept = 'application/json';
+        } else {
+            localVarHeaderParams.Accept = produces.join(',');
+        }
+        let localVarFormParams: any = {};
+
+        // verify required parameter 'orgId' is not null or undefined
+        if (orgId === null || orgId === undefined) {
+            throw new Error('Required parameter orgId was null or undefined when calling getCheckAssetEntries.');
+        }
+
+        // verify required parameter 'siteId' is not null or undefined
+        if (siteId === null || siteId === undefined) {
+            throw new Error('Required parameter siteId was null or undefined when calling getCheckAssetEntries.');
+        }
+
+        // verify required parameter 'dateTo' is not null or undefined
+        if (dateTo === null || dateTo === undefined) {
+            throw new Error('Required parameter dateTo was null or undefined when calling getCheckAssetEntries.');
+        }
+
+        if (dateFrom !== undefined) {
+            localVarQueryParameters['dateFrom'] = ObjectSerializer.serialize(dateFrom, "Date");
+        }
+
+        if (dateTo !== undefined) {
+            localVarQueryParameters['dateTo'] = ObjectSerializer.serialize(dateTo, "Date");
+        }
+
+        (<any>Object).assign(localVarHeaderParams, options.headers);
+
+        let localVarUseFormData = false;
+
+        let localVarRequestOptions: localVarRequest.Options = {
+            method: 'GET',
+            qs: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            uri: localVarPath,
+            useQuerystring: this._useQuerystring,
+            json: true,
+        };
+
+        let authenticationPromise = Promise.resolve();
+        if (this.authentications.bearer.accessToken) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.bearer.applyToRequest(localVarRequestOptions));
+        }
+        authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
+
+        let interceptorPromise = authenticationPromise;
+        for (const interceptor of this.interceptors) {
+            interceptorPromise = interceptorPromise.then(() => interceptor(localVarRequestOptions));
+        }
+
+        return interceptorPromise.then(() => {
+            if (Object.keys(localVarFormParams).length) {
+                if (localVarUseFormData) {
+                    (<any>localVarRequestOptions).formData = localVarFormParams;
+                } else {
+                    localVarRequestOptions.form = localVarFormParams;
+                }
+            }
+            return new Promise<{ response: http.IncomingMessage; body: GetCheckAssetEntries200Response;  }>((resolve, reject) => {
+                localVarRequest(localVarRequestOptions, (error, response, body) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                            body = ObjectSerializer.deserialize(body, "GetCheckAssetEntries200Response");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));

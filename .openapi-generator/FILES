@@ -9,6 +9,8 @@ model/accountReceivableResponse.ts
 model/badRequestError400Response.ts
 model/badRequestError400ResponseError.ts
 model/baseError.ts
+model/checkAssetEntryResponse.ts
+model/checkAssetType.ts
 model/createGeneralLedgerEntry200Response.ts
 model/createGeneralLedgerEntryRequest.ts
 model/createGeneralLedgerLineItemRequest.ts
@@ -19,6 +21,7 @@ model/generalLedgerAccountType.ts
 model/generalLedgerEntryResponse.ts
 model/generalLedgerEntryType.ts
 model/getAccountsReceivable200Response.ts
+model/getCheckAssetEntries200Response.ts
 model/getGeneralLedgerAccounts200Response.ts
 model/internalServerError500Response.ts
 model/internalServerError500ResponseError.ts

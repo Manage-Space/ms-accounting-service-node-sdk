@@ -6,6 +6,8 @@ export * from './accountReceivableResponse';
 export * from './badRequestError400Response';
 export * from './badRequestError400ResponseError';
 export * from './baseError';
+export * from './checkAssetEntryResponse';
+export * from './checkAssetType';
 export * from './createGeneralLedgerEntry200Response';
 export * from './createGeneralLedgerEntryRequest';
 export * from './createGeneralLedgerLineItemRequest';
@@ -16,6 +18,7 @@ export * from './generalLedgerAccountType';
 export * from './generalLedgerEntryResponse';
 export * from './generalLedgerEntryType';
 export * from './getAccountsReceivable200Response';
+export * from './getCheckAssetEntries200Response';
 export * from './getGeneralLedgerAccounts200Response';
 export * from './internalServerError500Response';
 export * from './internalServerError500ResponseError';
@@ -41,6 +44,8 @@ import { AccountReceivableResponse } from './accountReceivableResponse';
 import { BadRequestError400Response } from './badRequestError400Response';
 import { BadRequestError400ResponseError } from './badRequestError400ResponseError';
 import { BaseError } from './baseError';
+import { CheckAssetEntryResponse } from './checkAssetEntryResponse';
+import { CheckAssetType } from './checkAssetType';
 import { CreateGeneralLedgerEntry200Response } from './createGeneralLedgerEntry200Response';
 import { CreateGeneralLedgerEntryRequest } from './createGeneralLedgerEntryRequest';
 import { CreateGeneralLedgerLineItemRequest } from './createGeneralLedgerLineItemRequest';
@@ -51,6 +56,7 @@ import { GeneralLedgerAccountType } from './generalLedgerAccountType';
 import { GeneralLedgerEntryResponse } from './generalLedgerEntryResponse';
 import { GeneralLedgerEntryType } from './generalLedgerEntryType';
 import { GetAccountsReceivable200Response } from './getAccountsReceivable200Response';
+import { GetCheckAssetEntries200Response } from './getCheckAssetEntries200Response';
 import { GetGeneralLedgerAccounts200Response } from './getGeneralLedgerAccounts200Response';
 import { InternalServerError500Response } from './internalServerError500Response';
 import { InternalServerError500ResponseError } from './internalServerError500ResponseError';
@@ -71,6 +77,7 @@ let primitives = [
 
 let enumsMap: {[index: string]: any} = {
         "AccountReceivableIncomeType": AccountReceivableIncomeType,
+        "CheckAssetType": CheckAssetType,
         "GeneralLedgerAccountType": GeneralLedgerAccountType,
         "GeneralLedgerEntryType": GeneralLedgerEntryType,
 }
@@ -81,6 +88,7 @@ let typeMap: {[index: string]: any} = {
     "BadRequestError400Response": BadRequestError400Response,
     "BadRequestError400ResponseError": BadRequestError400ResponseError,
     "BaseError": BaseError,
+    "CheckAssetEntryResponse": CheckAssetEntryResponse,
     "CreateGeneralLedgerEntry200Response": CreateGeneralLedgerEntry200Response,
     "CreateGeneralLedgerEntryRequest": CreateGeneralLedgerEntryRequest,
     "CreateGeneralLedgerLineItemRequest": CreateGeneralLedgerLineItemRequest,
@@ -89,6 +97,7 @@ let typeMap: {[index: string]: any} = {
     "GeneralLedgerAccountResponse": GeneralLedgerAccountResponse,
     "GeneralLedgerEntryResponse": GeneralLedgerEntryResponse,
     "GetAccountsReceivable200Response": GetAccountsReceivable200Response,
+    "GetCheckAssetEntries200Response": GetCheckAssetEntries200Response,
     "GetGeneralLedgerAccounts200Response": GetGeneralLedgerAccounts200Response,
     "InternalServerError500Response": InternalServerError500Response,
     "InternalServerError500ResponseError": InternalServerError500ResponseError,
