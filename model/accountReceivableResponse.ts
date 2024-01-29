@@ -46,6 +46,14 @@ export class AccountReceivableResponse {
     * Income details.
     */
     'income': Array<AccountReceivableIncome>;
+    /**
+    * Additions.
+    */
+    'additions': number;
+    /**
+    * Subtractions.
+    */
+    'subtractions': number;
 
     static discriminator: string | undefined = undefined;
 
@@ -89,6 +97,16 @@ export class AccountReceivableResponse {
             "name": "income",
             "baseName": "income",
             "type": "Array<AccountReceivableIncome>"
+        },
+        {
+            "name": "additions",
+            "baseName": "additions",
+            "type": "number"
+        },
+        {
+            "name": "subtractions",
+            "baseName": "subtractions",
+            "type": "number"
         }    ];
 
     static getAttributeTypeMap() {
