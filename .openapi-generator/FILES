@@ -11,6 +11,8 @@ model/badRequestError400ResponseError.ts
 model/baseError.ts
 model/checkAssetEntryResponse.ts
 model/checkAssetType.ts
+model/createGeneralLedgerAccountRequest.ts
+model/createGeneralLedgerAccountsRequest.ts
 model/createGeneralLedgerEntry200Response.ts
 model/createGeneralLedgerEntryRequest.ts
 model/createGeneralLedgerLineItemRequest.ts

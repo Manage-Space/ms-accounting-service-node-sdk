@@ -8,6 +8,8 @@ export * from './badRequestError400ResponseError';
 export * from './baseError';
 export * from './checkAssetEntryResponse';
 export * from './checkAssetType';
+export * from './createGeneralLedgerAccountRequest';
+export * from './createGeneralLedgerAccountsRequest';
 export * from './createGeneralLedgerEntry200Response';
 export * from './createGeneralLedgerEntryRequest';
 export * from './createGeneralLedgerLineItemRequest';
@@ -55,6 +57,8 @@ import { BadRequestError400ResponseError } from './badRequestError400ResponseErr
 import { BaseError } from './baseError';
 import { CheckAssetEntryResponse } from './checkAssetEntryResponse';
 import { CheckAssetType } from './checkAssetType';
+import { CreateGeneralLedgerAccountRequest } from './createGeneralLedgerAccountRequest';
+import { CreateGeneralLedgerAccountsRequest } from './createGeneralLedgerAccountsRequest';
 import { CreateGeneralLedgerEntry200Response } from './createGeneralLedgerEntry200Response';
 import { CreateGeneralLedgerEntryRequest } from './createGeneralLedgerEntryRequest';
 import { CreateGeneralLedgerLineItemRequest } from './createGeneralLedgerLineItemRequest';
@@ -110,6 +114,8 @@ let typeMap: {[index: string]: any} = {
     "BadRequestError400ResponseError": BadRequestError400ResponseError,
     "BaseError": BaseError,
     "CheckAssetEntryResponse": CheckAssetEntryResponse,
+    "CreateGeneralLedgerAccountRequest": CreateGeneralLedgerAccountRequest,
+    "CreateGeneralLedgerAccountsRequest": CreateGeneralLedgerAccountsRequest,
     "CreateGeneralLedgerEntry200Response": CreateGeneralLedgerEntry200Response,
     "CreateGeneralLedgerEntryRequest": CreateGeneralLedgerEntryRequest,
     "CreateGeneralLedgerLineItemRequest": CreateGeneralLedgerLineItemRequest,

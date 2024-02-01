@@ -17,5 +17,6 @@ export enum GeneralLedgerAccountType {
     Liability = <any> 'liability',
     Equity = <any> 'equity',
     Revenue = <any> 'revenue',
-    Expense = <any> 'expense'
+    Expense = <any> 'expense',
+    Suspense = <any> 'suspense'
 }

@@ -27,6 +27,22 @@ export class GeneralLedgerAccountResponse {
     * General Ledger Account Description
     */
     'description': string;
+    /**
+    * Organization ID.
+    */
+    'orgId': string;
+    /**
+    * Site ID.
+    */
+    'siteId': string;
+    /**
+    * Credits.
+    */
+    'credits': number;
+    /**
+    * Debits.
+    */
+    'debits': number;
 
     static discriminator: string | undefined = undefined;
 
@@ -50,6 +66,26 @@ export class GeneralLedgerAccountResponse {
             "name": "description",
             "baseName": "description",
             "type": "string"
+        },
+        {
+            "name": "orgId",
+            "baseName": "orgId",
+            "type": "string"
+        },
+        {
+            "name": "siteId",
+            "baseName": "siteId",
+            "type": "string"
+        },
+        {
+            "name": "credits",
+            "baseName": "credits",
+            "type": "number"
+        },
+        {
+            "name": "debits",
+            "baseName": "debits",
+            "type": "number"
         }    ];
 
     static getAttributeTypeMap() {
