@@ -191,7 +191,7 @@ export class DefaultApi {
      * @param createGeneralLedgerEntryRequest 
      */
     public async createGeneralLedgerEntry (orgId: string, siteId: string, createGeneralLedgerEntryRequest: CreateGeneralLedgerEntryRequest, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreateGeneralLedgerEntry200Response;  }> {
-        const localVarPath = this.basePath + '/accounting/orgs/{orgId}/sites/{siteId}/general-ledger-entry'
+        const localVarPath = this.basePath + '/accounting/orgs/{orgId}/sites/{siteId}/general-ledger-entries'
             .replace('{' + 'orgId' + '}', encodeURIComponent(String(orgId)))
             .replace('{' + 'siteId' + '}', encodeURIComponent(String(siteId)));
         let localVarQueryParameters: any = {};

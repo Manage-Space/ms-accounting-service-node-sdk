@@ -18,7 +18,7 @@ export class GeneralLedgerAccountResponse {
     * General Ledger Account ID.
     */
     'generalLedgerAccountId': string;
-    'type': GeneralLedgerAccountType;
+    'generalLedgerAccountType': GeneralLedgerAccountType;
     /**
     * General Ledger Account Title
     */
@@ -26,7 +26,11 @@ export class GeneralLedgerAccountResponse {
     /**
     * General Ledger Account Description
     */
-    'description': string;
+    'description': string | null;
+    /**
+    * Alias for the Account
+    */
+    'alias': string | null;
     /**
     * Organization ID.
     */
@@ -53,8 +57,8 @@ export class GeneralLedgerAccountResponse {
             "type": "string"
         },
         {
-            "name": "type",
-            "baseName": "type",
+            "name": "generalLedgerAccountType",
+            "baseName": "generalLedgerAccountType",
             "type": "GeneralLedgerAccountType"
         },
         {
@@ -65,6 +69,11 @@ export class GeneralLedgerAccountResponse {
         {
             "name": "description",
             "baseName": "description",
+            "type": "string"
+        },
+        {
+            "name": "alias",
+            "baseName": "alias",
             "type": "string"
         },
         {

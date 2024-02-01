@@ -17,11 +17,15 @@ export class CreateGeneralLedgerAccountRequest {
     /**
     * Title of the account
     */
-    'title'?: string;
+    'title': string;
     /**
     * Description of the account
     */
     'description'?: string;
+    /**
+    * Alias for the account
+    */
+    'alias'?: string;
     'generalLedgerAccountType': GeneralLedgerAccountType;
 
     static discriminator: string | undefined = undefined;
@@ -35,6 +39,11 @@ export class CreateGeneralLedgerAccountRequest {
         {
             "name": "description",
             "baseName": "description",
+            "type": "string"
+        },
+        {
+            "name": "alias",
+            "baseName": "alias",
             "type": "string"
         },
         {
