@@ -11,6 +11,8 @@ export * from './checkAssetType';
 export * from './createGeneralLedgerEntry200Response';
 export * from './createGeneralLedgerEntryRequest';
 export * from './createGeneralLedgerLineItemRequest';
+export * from './feeIncomeEntryResponse';
+export * from './feeIncomeType';
 export * from './forbiddenError403Response';
 export * from './forbiddenError403ResponseError';
 export * from './generalLedgerAccountResponse';
@@ -19,9 +21,16 @@ export * from './generalLedgerEntryResponse';
 export * from './generalLedgerEntryType';
 export * from './getAccountsReceivable200Response';
 export * from './getCheckAssetEntries200Response';
+export * from './getFeeIncomeEntries200Response';
 export * from './getGeneralLedgerAccounts200Response';
+export * from './getMerchandiseIncomeEntries200Response';
+export * from './getRentalIncomeEntries200Response';
 export * from './internalServerError500Response';
 export * from './internalServerError500ResponseError';
+export * from './merchandiseIncomeEntryResponse';
+export * from './merchandiseIncomeType';
+export * from './rentalIncomeEntryResponse';
+export * from './rentalIncomeType';
 export * from './unauthorizedError401Response';
 export * from './unauthorizedError401ResponseError';
 
@@ -49,6 +58,8 @@ import { CheckAssetType } from './checkAssetType';
 import { CreateGeneralLedgerEntry200Response } from './createGeneralLedgerEntry200Response';
 import { CreateGeneralLedgerEntryRequest } from './createGeneralLedgerEntryRequest';
 import { CreateGeneralLedgerLineItemRequest } from './createGeneralLedgerLineItemRequest';
+import { FeeIncomeEntryResponse } from './feeIncomeEntryResponse';
+import { FeeIncomeType } from './feeIncomeType';
 import { ForbiddenError403Response } from './forbiddenError403Response';
 import { ForbiddenError403ResponseError } from './forbiddenError403ResponseError';
 import { GeneralLedgerAccountResponse } from './generalLedgerAccountResponse';
@@ -57,9 +68,16 @@ import { GeneralLedgerEntryResponse } from './generalLedgerEntryResponse';
 import { GeneralLedgerEntryType } from './generalLedgerEntryType';
 import { GetAccountsReceivable200Response } from './getAccountsReceivable200Response';
 import { GetCheckAssetEntries200Response } from './getCheckAssetEntries200Response';
+import { GetFeeIncomeEntries200Response } from './getFeeIncomeEntries200Response';
 import { GetGeneralLedgerAccounts200Response } from './getGeneralLedgerAccounts200Response';
+import { GetMerchandiseIncomeEntries200Response } from './getMerchandiseIncomeEntries200Response';
+import { GetRentalIncomeEntries200Response } from './getRentalIncomeEntries200Response';
 import { InternalServerError500Response } from './internalServerError500Response';
 import { InternalServerError500ResponseError } from './internalServerError500ResponseError';
+import { MerchandiseIncomeEntryResponse } from './merchandiseIncomeEntryResponse';
+import { MerchandiseIncomeType } from './merchandiseIncomeType';
+import { RentalIncomeEntryResponse } from './rentalIncomeEntryResponse';
+import { RentalIncomeType } from './rentalIncomeType';
 import { UnauthorizedError401Response } from './unauthorizedError401Response';
 import { UnauthorizedError401ResponseError } from './unauthorizedError401ResponseError';
 
@@ -78,8 +96,11 @@ let primitives = [
 let enumsMap: {[index: string]: any} = {
         "AccountReceivableIncomeType": AccountReceivableIncomeType,
         "CheckAssetType": CheckAssetType,
+        "FeeIncomeType": FeeIncomeType,
         "GeneralLedgerAccountType": GeneralLedgerAccountType,
         "GeneralLedgerEntryType": GeneralLedgerEntryType,
+        "MerchandiseIncomeType": MerchandiseIncomeType,
+        "RentalIncomeType": RentalIncomeType,
 }
 
 let typeMap: {[index: string]: any} = {
@@ -92,15 +113,21 @@ let typeMap: {[index: string]: any} = {
     "CreateGeneralLedgerEntry200Response": CreateGeneralLedgerEntry200Response,
     "CreateGeneralLedgerEntryRequest": CreateGeneralLedgerEntryRequest,
     "CreateGeneralLedgerLineItemRequest": CreateGeneralLedgerLineItemRequest,
+    "FeeIncomeEntryResponse": FeeIncomeEntryResponse,
     "ForbiddenError403Response": ForbiddenError403Response,
     "ForbiddenError403ResponseError": ForbiddenError403ResponseError,
     "GeneralLedgerAccountResponse": GeneralLedgerAccountResponse,
     "GeneralLedgerEntryResponse": GeneralLedgerEntryResponse,
     "GetAccountsReceivable200Response": GetAccountsReceivable200Response,
     "GetCheckAssetEntries200Response": GetCheckAssetEntries200Response,
+    "GetFeeIncomeEntries200Response": GetFeeIncomeEntries200Response,
     "GetGeneralLedgerAccounts200Response": GetGeneralLedgerAccounts200Response,
+    "GetMerchandiseIncomeEntries200Response": GetMerchandiseIncomeEntries200Response,
+    "GetRentalIncomeEntries200Response": GetRentalIncomeEntries200Response,
     "InternalServerError500Response": InternalServerError500Response,
     "InternalServerError500ResponseError": InternalServerError500ResponseError,
+    "MerchandiseIncomeEntryResponse": MerchandiseIncomeEntryResponse,
+    "RentalIncomeEntryResponse": RentalIncomeEntryResponse,
     "UnauthorizedError401Response": UnauthorizedError401Response,
     "UnauthorizedError401ResponseError": UnauthorizedError401ResponseError,
 }

@@ -14,6 +14,8 @@ model/checkAssetType.ts
 model/createGeneralLedgerEntry200Response.ts
 model/createGeneralLedgerEntryRequest.ts
 model/createGeneralLedgerLineItemRequest.ts
+model/feeIncomeEntryResponse.ts
+model/feeIncomeType.ts
 model/forbiddenError403Response.ts
 model/forbiddenError403ResponseError.ts
 model/generalLedgerAccountResponse.ts
@@ -22,10 +24,17 @@ model/generalLedgerEntryResponse.ts
 model/generalLedgerEntryType.ts
 model/getAccountsReceivable200Response.ts
 model/getCheckAssetEntries200Response.ts
+model/getFeeIncomeEntries200Response.ts
 model/getGeneralLedgerAccounts200Response.ts
+model/getMerchandiseIncomeEntries200Response.ts
+model/getRentalIncomeEntries200Response.ts
 model/internalServerError500Response.ts
 model/internalServerError500ResponseError.ts
+model/merchandiseIncomeEntryResponse.ts
+model/merchandiseIncomeType.ts
 model/models.ts
+model/rentalIncomeEntryResponse.ts
+model/rentalIncomeType.ts
 model/unauthorizedError401Response.ts
 model/unauthorizedError401ResponseError.ts
 package.json
