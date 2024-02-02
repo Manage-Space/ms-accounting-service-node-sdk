@@ -34,6 +34,7 @@ model/feeIncomeRuleResponse.ts
 model/feeIncomeType.ts
 model/forbiddenError403Response.ts
 model/forbiddenError403ResponseError.ts
+model/generalLedgerAccountLineItemResponse.ts
 model/generalLedgerAccountResponse.ts
 model/generalLedgerAccountType.ts
 model/generalLedgerEntryResponse.ts
@@ -44,6 +45,7 @@ model/getCheckAssetEntries200Response.ts
 model/getCheckAssetRules200Response.ts
 model/getFeeIncomeEntries200Response.ts
 model/getFeeIncomeRules200Response.ts
+model/getGeneralLedgerAccountById200Response.ts
 model/getGeneralLedgerAccounts200Response.ts
 model/getMerchandiseIncomeEntries200Response.ts
 model/getMerchandiseIncomeRules200Response.ts

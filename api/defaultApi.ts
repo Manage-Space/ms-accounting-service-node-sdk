@@ -31,6 +31,7 @@ import { GetCheckAssetEntries200Response } from '../model/getCheckAssetEntries20
 import { GetCheckAssetRules200Response } from '../model/getCheckAssetRules200Response';
 import { GetFeeIncomeEntries200Response } from '../model/getFeeIncomeEntries200Response';
 import { GetFeeIncomeRules200Response } from '../model/getFeeIncomeRules200Response';
+import { GetGeneralLedgerAccountById200Response } from '../model/getGeneralLedgerAccountById200Response';
 import { GetGeneralLedgerAccounts200Response } from '../model/getGeneralLedgerAccounts200Response';
 import { GetMerchandiseIncomeEntries200Response } from '../model/getMerchandiseIncomeEntries200Response';
 import { GetMerchandiseIncomeRules200Response } from '../model/getMerchandiseIncomeRules200Response';
@@ -1163,6 +1164,107 @@ export class DefaultApi {
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                             body = ObjectSerializer.deserialize(body, "GetFeeIncomeRules200Response");
+                            resolve({ response: response, body: body });
+                        } else {
+                            reject(new HttpError(response, body, response.statusCode));
+                        }
+                    }
+                });
+            });
+        });
+    }
+    /**
+     * Get general ledger account by id
+     * @summary Get general ledger account by id
+     * @param orgId The Organization ID
+     * @param siteId The Site ID
+     * @param generalLedgerAccountId General Ledger Account ID
+     * @param dateTo 
+     * @param dateFrom 
+     */
+    public async getGeneralLedgerAccountById (orgId: string, siteId: string, generalLedgerAccountId: string, dateTo: Date, dateFrom?: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: GetGeneralLedgerAccountById200Response;  }> {
+        const localVarPath = this.basePath + '/accounting/orgs/{orgId}/sites/{siteId}/general-ledger-accounts/{generalLedgerAccountId}'
+            .replace('{' + 'orgId' + '}', encodeURIComponent(String(orgId)))
+            .replace('{' + 'siteId' + '}', encodeURIComponent(String(siteId)))
+            .replace('{' + 'generalLedgerAccountId' + '}', encodeURIComponent(String(generalLedgerAccountId)));
+        let localVarQueryParameters: any = {};
+        let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
+        const produces = ['application/json;v=1'];
+        // give precedence to 'application/json'
+        if (produces.indexOf('application/json') >= 0) {
+            localVarHeaderParams.Accept = 'application/json';
+        } else {
+            localVarHeaderParams.Accept = produces.join(',');
+        }
+        let localVarFormParams: any = {};
+
+        // verify required parameter 'orgId' is not null or undefined
+        if (orgId === null || orgId === undefined) {
+            throw new Error('Required parameter orgId was null or undefined when calling getGeneralLedgerAccountById.');
+        }
+
+        // verify required parameter 'siteId' is not null or undefined
+        if (siteId === null || siteId === undefined) {
+            throw new Error('Required parameter siteId was null or undefined when calling getGeneralLedgerAccountById.');
+        }
+
+        // verify required parameter 'generalLedgerAccountId' is not null or undefined
+        if (generalLedgerAccountId === null || generalLedgerAccountId === undefined) {
+            throw new Error('Required parameter generalLedgerAccountId was null or undefined when calling getGeneralLedgerAccountById.');
+        }
+
+        // verify required parameter 'dateTo' is not null or undefined
+        if (dateTo === null || dateTo === undefined) {
+            throw new Error('Required parameter dateTo was null or undefined when calling getGeneralLedgerAccountById.');
+        }
+
+        if (dateFrom !== undefined) {
+            localVarQueryParameters['dateFrom'] = ObjectSerializer.serialize(dateFrom, "Date");
+        }
+
+        if (dateTo !== undefined) {
+            localVarQueryParameters['dateTo'] = ObjectSerializer.serialize(dateTo, "Date");
+        }
+
+        (<any>Object).assign(localVarHeaderParams, options.headers);
+
+        let localVarUseFormData = false;
+
+        let localVarRequestOptions: localVarRequest.Options = {
+            method: 'GET',
+            qs: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            uri: localVarPath,
+            useQuerystring: this._useQuerystring,
+            json: true,
+        };
+
+        let authenticationPromise = Promise.resolve();
+        if (this.authentications.bearer.accessToken) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.bearer.applyToRequest(localVarRequestOptions));
+        }
+        authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
+
+        let interceptorPromise = authenticationPromise;
+        for (const interceptor of this.interceptors) {
+            interceptorPromise = interceptorPromise.then(() => interceptor(localVarRequestOptions));
+        }
+
+        return interceptorPromise.then(() => {
+            if (Object.keys(localVarFormParams).length) {
+                if (localVarUseFormData) {
+                    (<any>localVarRequestOptions).formData = localVarFormParams;
+                } else {
+                    localVarRequestOptions.form = localVarFormParams;
+                }
+            }
+            return new Promise<{ response: http.IncomingMessage; body: GetGeneralLedgerAccountById200Response;  }>((resolve, reject) => {
+                localVarRequest(localVarRequestOptions, (error, response, body) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+                            body = ObjectSerializer.deserialize(body, "GetGeneralLedgerAccountById200Response");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
