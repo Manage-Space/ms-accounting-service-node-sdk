@@ -36,6 +36,7 @@ export enum CheckAssetType {
     MastercardDebit = <any> 'mastercard_debit',
     Multibanco = <any> 'multibanco',
     Oxxo = <any> 'oxxo',
+    Other = <any> 'other',
     P24 = <any> 'p24',
     Paypal = <any> 'paypal',
     SepaDebit = <any> 'sepa_debit',

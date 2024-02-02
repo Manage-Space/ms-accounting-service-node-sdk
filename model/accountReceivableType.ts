@@ -12,8 +12,8 @@
 
 import { RequestFile } from './models';
 
-export enum RentalIncomeType {
-    Other = <any> 'other',
+export enum AccountReceivableType {
     Rent = <any> 'rent',
-    Refund = <any> 'refund'
+    Fee = <any> 'fee',
+    Other = <any> 'other'
 }
